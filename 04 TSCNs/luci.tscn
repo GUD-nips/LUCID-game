@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ktmrpa6i37d3"]
+
+[ext_resource type="Texture2D" uid="uid://cl65qrxrosk48" path="res://02 Character Assets/Luci Assets/Luci Full Body.png" id="1_m41i0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g8m3q"]
+radius = 33.0
+height = 284.0
+
+[node name="Luci" type="CharacterBody2D" unique_id=626956492]
+
+[node name="Luci_pic" type="Sprite2D" parent="." unique_id=1280729205]
+position = Vector2(-1.5, 1.29999)
+scale = Vector2(0.111, 0.111)
+texture = ExtResource("1_m41i0")
+
+[node name="Luci_collision" type="CollisionShape2D" parent="." unique_id=1934435884]
+position = Vector2(-0.5, 1.29999)
+shape = SubResource("CapsuleShape2D_g8m3q")
