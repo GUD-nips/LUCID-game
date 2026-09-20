@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/boot.png-b2b89e484b0be68062e1a964009c477f.cte
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/stairs.png-057f2af48e54be236f757ff14e533081.c
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

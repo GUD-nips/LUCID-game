@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bh6rj7fyrjcwj"]
+
+[ext_resource type="Texture2D" uid="uid://vgtm2ori3rai" path="res://06 UI Elements/Basic/Default/bracket_a_vertical.png" id="1_jhc37"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_www6l"]
+size = Vector2(14, 40)
+
+[node name="RigidBody2D" type="RigidBody2D" unique_id=2146635829]
+collision_mask = 0
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1321073908]
+scale = Vector2(1.57813, 1.57813)
+texture = ExtResource("1_jhc37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1983349897]
+shape = SubResource("RectangleShape2D_www6l")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1109316553]
+position = Vector2(7.15256e-07, -9.53674e-07)
+scale = Vector2(0.7, 2)

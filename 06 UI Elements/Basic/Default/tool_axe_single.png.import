@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/tool_axe_single.png-fb4ddedf2ea5f32ff9521d81b
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

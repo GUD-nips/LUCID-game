@@ -1,42 +1,13 @@
-# A simple main menu
-extends Control
+extends MarginContainer
 
-
-# Start the game
-func _on_new_game_pressed():
-	escoria.new_game()
-
-
-# Show the load slots
-func _on_load_game_pressed():
-	$main.hide()
-	$load_game.refresh_savegames()
-	$load_game.show()
-
-
-# Show the options panel
-func _on_options_pressed():
-	$main.hide()
-	$options.show()
-
-
-# Quit the game
-func _on_quit_pressed():
-	escoria.quit()
-
-
-# Hide the options panel again
-func _on_options_back_button_pressed():
-	reset()
-
-
-# Hide the load panel
-func _on_load_game_back_button_pressed():
-	reset()
-
-
-# Resets the UI to initial state
-func reset():
-	$load_game.hide()
-	$options.hide()
-	$main.show()
+# Universal signal emission for main menu buttons regardless of instance
+func _on_new_game_button_pressed() -> void:
+	globalsignals.newgame.emit()
+func _on_continue_pressed() -> void:
+	globalsignals.continuegame.emit()
+func _on_load_menu_pressed() -> void:
+	globalsignals.loadmenu.emit()
+func _on_options_button_pressed() -> void:
+	globalsignals.options.emit()
+func _on_exit_button_pressed() -> void:
+	globalsignals.exit.emit()

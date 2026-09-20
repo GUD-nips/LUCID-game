@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/steps.png-c5693cb9ba6c5a75bb1f1ebc179d5f97.ct
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

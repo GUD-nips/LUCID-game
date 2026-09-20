@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/door_disabled.png-93c4c4c91ed3d42c1c70dde831c
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/pointer_scifi_a.png-c627702a8839919b6c8b7de47
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

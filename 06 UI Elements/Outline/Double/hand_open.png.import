@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/hand_open.png-a838117098e8f4eb2ead5f35e7eca0e
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

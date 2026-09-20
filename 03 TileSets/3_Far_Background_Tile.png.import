@@ -3,20 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bad8qq1mn7rsp"
-path="res://.godot/imported/3_Far_Background_Tile.png-d8e3ebbd562f7c2e22efe2e24863a992.ctex"
+path="res://.godot/imported/3_Far_Background_Tile.png-920ba982aa6977efc026af46093f35db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://03 TileSets/3_Far_Background_Tile.png"
-dest_files=["res://.godot/imported/3_Far_Background_Tile.png-d8e3ebbd562f7c2e22efe2e24863a992.ctex"]
+source_file="res://03 Tilesets/3_Far_Background_Tile.png"
+dest_files=["res://.godot/imported/3_Far_Background_Tile.png-920ba982aa6977efc026af46093f35db.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

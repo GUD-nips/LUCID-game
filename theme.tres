@@ -1,6 +1,3 @@
-[gd_resource type="Theme" load_steps=2 format=2]
-
-[ext_resource path="res://addons/escoria-core/ui_library/fonts/caslonantique.tres" type="FontFile" id=1]
+[gd_resource type="Theme" format=3 uid="uid://2mebegfqrw7r"]
 
 [resource]
-default_font = ExtResource( 1 )

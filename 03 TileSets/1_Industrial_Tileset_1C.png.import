@@ -3,20 +3,21 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dd7xt53hbc6kn"
-path="res://.godot/imported/1_Industrial_Tileset_1C.png-e5d1af8e1342d0f20d3e73adab215b3a.ctex"
+path="res://.godot/imported/1_Industrial_Tileset_1C.png-d14e21e2812ad71c0a59d3b907bab68d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://03 TileSets/1_Industrial_Tileset_1C.png"
-dest_files=["res://.godot/imported/1_Industrial_Tileset_1C.png-e5d1af8e1342d0f20d3e73adab215b3a.ctex"]
+source_file="res://03 Tilesets/1_Industrial_Tileset_1C.png"
+dest_files=["res://.godot/imported/1_Industrial_Tileset_1C.png-d14e21e2812ad71c0a59d3b907bab68d.ctex"]
 
 [params]
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0

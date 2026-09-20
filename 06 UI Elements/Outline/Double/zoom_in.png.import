@@ -17,6 +17,7 @@ dest_files=["res://.godot/imported/zoom_in.png-31cd9d39d0f32e917ac2d2c46d656115.
 
 compress/mode=0
 compress/high_quality=false
+compress/high_quality_mode=0
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
