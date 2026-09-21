@@ -13,12 +13,3 @@ script = ExtResource("1_2418w")
 [node name="lucisprite" type="Sprite2D" parent="roomcontainer" unique_id=409534509]
 position = Vector2(2886, -981)
 texture = ExtResource("2_mch03")
-
-[node name="lucilargespawn" type="Marker2D" parent="." unique_id=1662652695]
-position = Vector2(3150, -923)
-
-[node name="lucismallspawn" type="Marker2D" parent="." unique_id=922108887]
-position = Vector2(551, 422)
-
-[node name="svenspawn" type="Marker2D" parent="." unique_id=389974427]
-position = Vector2(4353, -794)

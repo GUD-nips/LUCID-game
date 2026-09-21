@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="LUCID"
-run/main_scene="uid://cs1epm263gtao"
+run/main_scene="uid://4dbdg5o1q6ed"
 config/features=PackedStringArray("4.8", "Forward Plus")
 config/icon="uid://csb0il08bgfch"
 
@@ -19,6 +19,9 @@ config/icon="uid://csb0il08bgfch"
 
 globalvariables="*uid://d2k5xf4cx6ltb"
 globalsignals="*uid://bpe5j8ibr51l3"
+globalenums="*uid://c7hvb8gcxavfe"
+savegamemanager="*uid://4gtsea0d01ui"
+globalfunctions="*uid://dhesakrlw74ev"
 
 [display]
 

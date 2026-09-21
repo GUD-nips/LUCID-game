@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://cs1epm263gtao"]
 
 [ext_resource type="Script" uid="uid://bx8b2nf8gbq6t" path="res://05 Scripts/main_menu.gd" id="1_nxj0u"]
-[ext_resource type="Shader" uid="uid://b42pteje7x7lj" path="res://07 Shaders/Lucid_Logo.gdshader" id="1_wplq4"]
+[ext_resource type="Shader" uid="uid://crro8k2ktlle6" path="res://07 Shaders/Lucid_Logo.gdshader" id="1_wplq4"]
 [ext_resource type="Texture2D" uid="uid://2fr15gr8yi8l" path="res://02 Character Assets/Luci Assets/Lucid Title.png" id="2_nxj0u"]
 [ext_resource type="FontFile" uid="uid://cj8bkrxwcs8vx" path="res://01 Fonts/LucidFontInterim.ttf" id="3_3px3n"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r34v2"]
-resource_local_to_scene = true
 shader = ExtResource("1_wplq4")
 shader_parameter/offset = Vector2(-20, 10)
 shader_parameter/shadow_color = Color(0.74509805, 0, 0.42352942, 1)
@@ -17,10 +16,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
 script = ExtResource("1_nxj0u")
 
 [node name="TitleSeperatorVBOX" type="VBoxContainer" parent="." unique_id=2099230162]

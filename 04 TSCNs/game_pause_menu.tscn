@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://y41hl3kayd0i"]
+
+[ext_resource type="Script" uid="uid://mwcrag7pakp0" path="res://05 Scripts/game_pause_menu.gd" id="1_3yu3x"]
+[ext_resource type="FontFile" uid="uid://cj8bkrxwcs8vx" path="res://01 Fonts/LucidFontInterim.ttf" id="2_5vh1b"]
+
+[node name="game_pause_menu" type="Control" unique_id=1886226368]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3yu3x")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1275539055]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1709247899]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=900083449]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.47
+
+[node name="pauseresume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=750416887]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_5vh1b")
+theme_override_font_sizes/font_size = 60
+text = "RESUME"
+flat = true
+
+[node name="pauseoptions" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2094002732]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_5vh1b")
+theme_override_font_sizes/font_size = 60
+text = "OPTIONS"
+flat = true
+
+[node name="pausesavegame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=552728031]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_5vh1b")
+theme_override_font_sizes/font_size = 60
+text = "SAVE GAME"
+flat = true
+
+[node name="pauseloadgame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1495154423]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_5vh1b")
+theme_override_font_sizes/font_size = 60
+text = "LOAD GAME"
+flat = true
+
+[node name="pausesaveandquit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=163598597]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 30
+theme_override_fonts/font = ExtResource("2_5vh1b")
+theme_override_font_sizes/font_size = 60
+text = "SAVE AND QUIT"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=806286931]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.05
+
+[node name="pauseflashtimer" type="Timer" parent="." unique_id=2129142785]
+process_mode = 3
+autostart = true
+
+[node name="pausednotifier" type="Label" parent="." unique_id=829561544]
+layout_mode = 0
+offset_left = 60.0
+offset_top = 50.0
+offset_right = 1092.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.5746581, 0, 0.19548637, 1)
+theme_override_constants/shadow_offset_x = -10
+theme_override_constants/shadow_offset_y = -10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 5
+theme_override_fonts/font = ExtResource("2_5vh1b")
+theme_override_font_sizes/font_size = 30
+text = "GAME PAUSED"
+
+[connection signal="timeout" from="pauseflashtimer" to="." method="_on_pauseflashtimer_timeout"]

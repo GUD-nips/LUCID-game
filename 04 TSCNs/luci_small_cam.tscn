@@ -1,3 +1,4 @@
 [gd_scene format=3 uid="uid://c64csaaimng8m"]
 
 [node name="lucismallcam" type="Camera2D" unique_id=1160683376]
+zoom = Vector2(0.8, 0.8)
