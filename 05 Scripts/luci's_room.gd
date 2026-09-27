@@ -10,6 +10,7 @@ var luci = null
 var sven = null
 var scenetype = null
 
+
 # Preload objects and identifiers
 @onready var lucilargespawn = $lucilargespawn
 @onready var lucismallspawn = $lucismallspawn
@@ -24,10 +25,13 @@ func _ready() -> void:
 		luci.global_position = lucilargespawn.global_position
 		sven.global_position = svenspawn.global_position
 		luci.cameratype = globalenums.cameratypes.LUCI_LARGE
+		luci.scale = Vector2(4,4)
+		luci.camerasetter()
 	elif scenetype == globalenums.cameratypes.LUCI_SMALL:
 		add_pc_luci()
 		luci.global_position = lucismallspawn.global_position
 		luci.cameratype = globalenums.cameratypes.LUCI_SMALL
+		luci.camerasetter()
 
 # Functions to handle creation of characters within scene
 func add_pc_luci():

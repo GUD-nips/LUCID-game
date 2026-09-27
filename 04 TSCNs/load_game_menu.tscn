@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://j3wkbyhedkpr"]
 
-[ext_resource type="Script" uid="uid://owy28jyfr0li" path="res://04 TSCNs/load_game_menu.gd" id="1_0f0mj"]
+[ext_resource type="Script" uid="uid://owy28jyfr0li" path="res://05 Scripts/load_game_menu.gd" id="1_0f0mj"]
 [ext_resource type="FontFile" uid="uid://cj8bkrxwcs8vx" path="res://01 Fonts/LucidFontInterim.ttf" id="1_4rchq"]
 
 [node name="load_game" type="Control" unique_id=722279691]

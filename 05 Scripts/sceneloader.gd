@@ -4,10 +4,12 @@ extends Control
 @onready var luciroom: PackedScene = preload("res://04 TSCNs/Luci's_Room.tscn")
 @onready var optionsmenu: PackedScene = preload("res://04 TSCNs/game_options_menu.tscn")
 @onready var loadgamemenu: PackedScene = preload("res://04 TSCNs/load_game_menu.tscn")
+@onready var pausegamemenu: PackedScene = preload("res://04 TSCNs/game_pause_menu.tscn")
 
 var mainmenuinstance = null
 var optionsmenuinstance = null
 var loadgamemenuinstance = null
+var pausegamemenuinstance = null
 var currentlevelinstance = null
 
 # /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -87,18 +89,33 @@ func _on_game_load_menu_return_pressed():
 		for child in self.get_children():
 			if "visible" in child:
 				child.visible = true
-# Functions to control the goings on in the game pause menu
+# Functions to control the game pause menu, and the goings on in the game pause menu
+
+func toggle_pause_menu():
+	if get_tree().paused != true and loadgamemenuinstance == null:
+		if Input.is_action_just_pressed("Pause"):
+			pausegamemenuinstance = pausegamemenu.instantiate()
+			add_child(pausegamemenuinstance)
+			get_tree().paused = true
+
+	if get_tree().paused == true or loadgamemenuinstance != null:
+		if Input.is_action_just_pressed("Pause"):
+			pausegamemenuinstance.queue_free()
+			get_tree().paused = false
+
+
+
 
 # Functions to handle the loading and unloading of gamescreens
 
 func first_game_scene():
 	globalsignals.first_level_start.emit()
 	currentlevelinstance = luciroom.instantiate()
-	add_child(currentlevelinstance)
 	currentlevelinstance.scenetype = globalenums.cameratypes.LUCI_LARGE
+	add_child(currentlevelinstance)
 
 func second_game_scene():
 	globalsignals.second_level_start.emit()
 	currentlevelinstance = luciroom.instantiate()
-	add_child(currentlevelinstance)
 	currentlevelinstance.scenetype = globalenums.cameratypes.LUCI_SMALL
+	add_child(currentlevelinstance)
