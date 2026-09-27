@@ -21,6 +21,8 @@ func _ready() -> void:
 	
 	openmainmenu()
 
+# Physics process, includes code to operate the pause menu during gameplay
+
 # Function run upon the ending of opening cinematic and exit to main menu to open the main menu and connect button signals.
 func openmainmenu():
 	mainmenuinstance = mainmenu.instantiate()
@@ -58,7 +60,7 @@ func _on_load_menu_pressed():
 		mainmenuinstance.hide()
 		loadgamemenuinstance = loadgamemenu.instantiate()
 		add_child(loadgamemenuinstance)
-	if not globalsignals.loadgamemenureturn.connect(_on_game_load_menu_return_pressed):
+	if not globalsignals.loadgamemenureturn.is_connected(_on_game_load_menu_return_pressed):
 		globalsignals.loadgamemenureturn.connect(_on_game_load_menu_return_pressed)
 
 func _on_options_button_pressed():
@@ -89,19 +91,22 @@ func _on_game_load_menu_return_pressed():
 		for child in self.get_children():
 			if "visible" in child:
 				child.visible = true
+
 # Functions to control the game pause menu, and the goings on in the game pause menu
 
+func _input(event):
+	if event.is_action_pressed("Pause"):
+		print("pause has been pressed")
+		toggle_pause_menu()
+
 func toggle_pause_menu():
-	if get_tree().paused != true and loadgamemenuinstance == null:
-		if Input.is_action_just_pressed("Pause"):
+		if get_tree().paused != true and is_instance_valid(mainmenuinstance) != true:
 			pausegamemenuinstance = pausegamemenu.instantiate()
 			add_child(pausegamemenuinstance)
-			get_tree().paused = true
-
-	if get_tree().paused == true or loadgamemenuinstance != null:
-		if Input.is_action_just_pressed("Pause"):
+			get_tree().paused = !get_tree().paused
+		elif get_tree().paused == true and is_instance_valid(pausegamemenuinstance):
 			pausegamemenuinstance.queue_free()
-			get_tree().paused = false
+			get_tree().paused = !get_tree().paused
 
 
 

@@ -17,7 +17,7 @@ func _ready() -> void:
 
 # Movement handling
 func _input(event):
-	if event.is_action_pressed("click"):
+	if event.is_action_pressed("LeftClick"):
 		target = get_global_mouse_position()
 
 func _physics_process(delta):

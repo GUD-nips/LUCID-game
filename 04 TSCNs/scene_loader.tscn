@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bo6ylisp8r81n" path="res://05 Scripts/sceneloader.gd" id="1_8ey8c"]
 
 [node name="Sceneloader" type="Control" unique_id=1459576438]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

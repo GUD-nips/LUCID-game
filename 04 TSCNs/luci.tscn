@@ -12,10 +12,10 @@ top_level = true
 script = ExtResource("1_45kqt")
 
 [node name="Luci_pic" type="Sprite2D" parent="." unique_id=1280729205]
-position = Vector2(-1.5, 1.29999)
+position = Vector2(-4, -136)
 scale = Vector2(0.111, 0.111)
 texture = ExtResource("1_m41i0")
 
 [node name="Luci_collision" type="CollisionShape2D" parent="." unique_id=1934435884]
-position = Vector2(-0.5, 1.29999)
+position = Vector2(-1, -141)
 shape = SubResource("CapsuleShape2D_g8m3q")
