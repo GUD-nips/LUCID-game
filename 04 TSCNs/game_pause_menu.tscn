@@ -14,7 +14,15 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3yu3x")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1275539055]
+[node name="backgroundpanel" type="ColorRect" parent="." unique_id=1671139599]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0, 0.20784314, 0.59607846, 0.3019608)
+
+[node name="menumargins" type="MarginContainer" parent="." unique_id=1275539055]
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -23,15 +31,15 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 50
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1709247899]
+[node name="textdividerxbox" type="VBoxContainer" parent="menumargins" unique_id=1709247899]
 layout_mode = 2
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=900083449]
+[node name="gamepausehbox" type="HBoxContainer" parent="menumargins/textdividerxbox" unique_id=900083449]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.47
 
-[node name="pauseresume" type="Button" parent="MarginContainer/VBoxContainer" unique_id=750416887]
+[node name="pauseresume" type="Button" parent="menumargins/textdividerxbox" unique_id=750416887]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -43,7 +51,7 @@ theme_override_font_sizes/font_size = 60
 text = "RESUME"
 flat = true
 
-[node name="pauseoptions" type="Button" parent="MarginContainer/VBoxContainer" unique_id=2094002732]
+[node name="pauseoptions" type="Button" parent="menumargins/textdividerxbox" unique_id=2094002732]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -55,7 +63,7 @@ theme_override_font_sizes/font_size = 60
 text = "OPTIONS"
 flat = true
 
-[node name="pausesavegame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=552728031]
+[node name="pausesavegame" type="Button" parent="menumargins/textdividerxbox" unique_id=552728031]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -67,7 +75,7 @@ theme_override_font_sizes/font_size = 60
 text = "SAVE GAME"
 flat = true
 
-[node name="pauseloadgame" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1495154423]
+[node name="pauseloadgame" type="Button" parent="menumargins/textdividerxbox" unique_id=1495154423]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -79,7 +87,7 @@ theme_override_font_sizes/font_size = 60
 text = "LOAD GAME"
 flat = true
 
-[node name="pausesaveandquit" type="Button" parent="MarginContainer/VBoxContainer" unique_id=163598597]
+[node name="pausesaveandquit" type="Button" parent="menumargins/textdividerxbox" unique_id=163598597]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 3
@@ -91,7 +99,7 @@ theme_override_font_sizes/font_size = 60
 text = "SAVE AND QUIT"
 flat = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=806286931]
+[node name="spacerhbox" type="HBoxContainer" parent="menumargins/textdividerxbox" unique_id=806286931]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.05
@@ -115,4 +123,9 @@ theme_override_fonts/font = ExtResource("2_5vh1b")
 theme_override_font_sizes/font_size = 30
 text = "GAME PAUSED"
 
+[connection signal="pressed" from="menumargins/textdividerxbox/pauseresume" to="." method="_on_pauseresume_pressed"]
+[connection signal="pressed" from="menumargins/textdividerxbox/pauseoptions" to="." method="_on_pauseoptions_pressed"]
+[connection signal="pressed" from="menumargins/textdividerxbox/pausesavegame" to="." method="_on_pausesavegame_pressed"]
+[connection signal="pressed" from="menumargins/textdividerxbox/pauseloadgame" to="." method="_on_pauseloadgame_pressed"]
+[connection signal="pressed" from="menumargins/textdividerxbox/pausesaveandquit" to="." method="_on_pausesaveandquit_pressed"]
 [connection signal="timeout" from="pauseflashtimer" to="." method="_on_pauseflashtimer_timeout"]

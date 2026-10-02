@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://jm067qanrmc2" path="res://08 Backdrops/Luci's Room first Draft.svg" id="2_mch03"]
 
 [node name="roommanager" type="Control" unique_id=1621529885]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_2418w")

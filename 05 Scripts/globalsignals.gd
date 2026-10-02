@@ -29,16 +29,20 @@ signal pausesaveandquit
 signal loadgamemenuopen
 
 signal loadgamemenureturn
-signal loadslot1
-signal loadslot2
-signal loadslot3
-signal loadslot4
-signal loadslot5
-signal loadslot6
-signal loadslot7
-signal loadslot8
-signal loadslot9
-signal loadslot10
+
+signal autosaveloadslot
+signal saveloadslot1
+signal saveloadslot2
+signal saveloadslot3
+signal saveloadslot4
+signal saveloadslot5
+signal saveloadslot6
+signal saveloadslot7
+signal saveloadslot8
+signal saveloadslot9
+signal saveloadslot10
+signal saveloadslot11
+
 
 # Signals used in camera selection and variance of sprites used
 signal first_level_start

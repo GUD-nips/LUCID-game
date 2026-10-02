@@ -1,33 +1,9 @@
 extends Control
 
-@onready var subonbutton = $MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer/subtitleson
-@onready var suboffbutton = $MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer/subtitlesoff
+@onready var subonbutton = $MarginContainer/labelsandslidershbox/slidersvbox/subbuttonshbox/subtitleson
+@onready var suboffbutton = $MarginContainer/labelsandslidershbox/slidersvbox/subbuttonshbox/subtitlesoff
 
 # ////////////////////////////////////////////////////////////////////////////////////////////////
-
-func _on_vol_slider_master_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
-
-func _on_vol_slider_music_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
-
-func _on_vol_slider_sfx_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
-
-func _on_vol_slider_speech_value_changed(value: float) -> void:
-	pass # Replace with function body.
-
-
-func _on_sub_off_button_toggled(toggled_on: bool):
-	pass
-
-
-func _on_sub_on_button_toggled(toggled_on: bool):
-	pass
-
 
 func _on_return_pressed() -> void:
 	globalsignals.optionsreturn.emit()

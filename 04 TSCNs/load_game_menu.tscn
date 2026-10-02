@@ -3,6 +3,28 @@
 [ext_resource type="Script" uid="uid://owy28jyfr0li" path="res://05 Scripts/load_game_menu.gd" id="1_0f0mj"]
 [ext_resource type="FontFile" uid="uid://cj8bkrxwcs8vx" path="res://01 Fonts/LucidFontInterim.ttf" id="1_4rchq"]
 
+[sub_resource type="Gradient" id="Gradient_0f0mj"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.38922155, 1)
+colors = PackedColorArray(0.64705884, 0, 0, 0.29803923, 0, 0.9254902, 0.59607846, 0.61960787)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d06u8"]
+gradient = SubResource("Gradient_0f0mj")
+width = 500
+height = 500
+
+[sub_resource type="Gradient" id="Gradient_5p6wl"]
+offsets = PackedFloat32Array(0, 0.94011974, 1)
+colors = PackedColorArray(0.67145634, 0.8404534, 0.47040677, 1, 0.9803267, 0.9904463, 0.9682878, 1, 0.654902, 0.23921569, 0.6784314, 0.75686276)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5p6wl"]
+gradient = SubResource("Gradient_5p6wl")
+
+[sub_resource type="Gradient" id="Gradient_gwskb"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0f0mj"]
+gradient = SubResource("Gradient_gwskb")
+
 [node name="load_game" type="Control" unique_id=722279691]
 process_mode = 3
 layout_mode = 3
@@ -13,40 +35,278 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0f0mj")
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1579659819]
+[node name="backgroundpanel" type="ColorRect" parent="." unique_id=764516238]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 1295.0
+color = Color(0, 0.20784314, 0.59607846, 0.3019608)
+
+[node name="menuscroller" type="ScrollContainer" parent="." unique_id=1954408369]
+top_level = true
+custom_minimum_size = Vector2(1152, 648)
+propagate_maximum_size = true
+clip_contents = false
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 50
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 50
-
-[node name="backgroundpanel" type="ColorRect" parent="MarginContainer" unique_id=764516238]
-layout_mode = 2
-color = Color(0.270588, 0.270588, 0.270588, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1718518739]
-layout_mode = 2
-
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=1954408369]
-layout_mode = 2
 size_flags_vertical = 3
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
 
-[node name="slots" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=550667061]
+[node name="menumargins" type="MarginContainer" parent="menuscroller" unique_id=1579659819]
+custom_minimum_size = Vector2(1100, 1296)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 35
+
+[node name="vslots" type="VBoxContainer" parent="menuscroller/menumargins" unique_id=550667061]
+custom_minimum_size = Vector2(0, 1196)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="returntoprevious" type="Button" parent="MarginContainer/VBoxContainer" unique_id=548350644]
+[node name="hslots1" type="HBoxContainer" parent="menuscroller/menumargins/vslots" unique_id=130656495]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="autosavemargin" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots1" unique_id=1174260355]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="autosaveslot" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots1/autosavemargin" unique_id=261539964]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin2" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots1" unique_id=19048309]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot2" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots1/margin2" unique_id=1769969261]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin3" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots1" unique_id=321711455]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot3" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots1/margin3" unique_id=409062852]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="hslots2" type="HBoxContainer" parent="menuscroller/menumargins/vslots" unique_id=345388495]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="margin4" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots2" unique_id=751522626]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot4" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots2/margin4" unique_id=472884938]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin5" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots2" unique_id=1005743591]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot5" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots2/margin5" unique_id=1704854504]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin6" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots2" unique_id=1431220629]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot6" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots2/margin6" unique_id=468494095]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="hslots3" type="HBoxContainer" parent="menuscroller/menumargins/vslots" unique_id=1331305781]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="margin7" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots3" unique_id=441879421]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot7" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots3/margin7" unique_id=1169552930]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin8" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots3" unique_id=1086006329]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot8" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots3/margin8" unique_id=1337300704]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin9" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots3" unique_id=1397831982]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot9" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots3/margin9" unique_id=807782396]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="hslots4" type="HBoxContainer" parent="menuscroller/menumargins/vslots" unique_id=1731575022]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="margin10" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots4" unique_id=327200224]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot10" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots4/margin10" unique_id=2004336143]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin11" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots4" unique_id=598544971]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot11" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots4/margin11" unique_id=512041905]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="margin12" type="MarginContainer" parent="menuscroller/menumargins/vslots/hslots4" unique_id=1315029859]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="saveslot12" type="TextureButton" parent="menuscroller/menumargins/vslots/hslots4/margin12" unique_id=1524283940]
+layout_mode = 2
+texture_normal = SubResource("GradientTexture2D_d06u8")
+texture_pressed = SubResource("GradientTexture1D_5p6wl")
+texture_hover = SubResource("GradientTexture2D_0f0mj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="menuoptionsholder" type="CanvasLayer" parent="." unique_id=1173655014]
+
+[node name="returntoprevious" type="Button" parent="menuoptionsholder" unique_id=548350644]
+offset_left = 81.0
+offset_top = 535.0
+offset_right = 349.0
+offset_bottom = 581.0
 size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_4rchq")
 theme_override_font_sizes/font_size = 50
-text = "   RETURN"
+text = "RETURN"
 flat = true
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/returntoprevious" to="." method="_on_returntoprevious_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots1/autosavemargin/autosaveslot" to="." method="_on_autosaveslot_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots1/margin2/saveslot2" to="." method="_on_saveslot_2_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots1/margin3/saveslot3" to="." method="_on_saveslot_3_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots2/margin4/saveslot4" to="." method="_on_saveslot_4_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots2/margin5/saveslot5" to="." method="_on_saveslot_5_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots2/margin6/saveslot6" to="." method="_on_saveslot_6_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots3/margin7/saveslot7" to="." method="_on_saveslot_7_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots3/margin8/saveslot8" to="." method="_on_saveslot_8_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots3/margin9/saveslot9" to="." method="_on_saveslot_9_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots4/margin10/saveslot10" to="." method="_on_saveslot_10_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots4/margin11/saveslot11" to="." method="_on_saveslot_11_pressed"]
+[connection signal="pressed" from="menuscroller/menumargins/vslots/hslots4/margin12/saveslot12" to="." method="_on_saveslot_12_pressed"]
+[connection signal="pressed" from="menuoptionsholder/returntoprevious" to="." method="_on_returntoprevious_pressed"]

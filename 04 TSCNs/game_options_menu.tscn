@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bqd4rwr6xnpoq" path="res://05 Scripts/options_menu.gd" id="1_q0mod"]
 [ext_resource type="FontFile" uid="uid://cj8bkrxwcs8vx" path="res://01 Fonts/LucidFontInterim.ttf" id="2_td23k"]
+[ext_resource type="Script" uid="uid://c74s1wlwiqofd" path="res://05 Scripts/volslider.gd" id="3_hld1g"]
 
 [node name="optionsmenucontainer" type="Control" unique_id=677086949]
 process_mode = 3
@@ -14,6 +15,14 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_q0mod")
 
+[node name="TextureRect" type="ColorRect" parent="." unique_id=631095266]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0, 0.20784314, 0.59607846, 0.3019608)
+
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=721580151]
 layout_mode = 0
 offset_right = 1152.0
@@ -23,13 +32,13 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 50
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1728342035]
+[node name="labelsandslidershbox" type="HBoxContainer" parent="MarginContainer" unique_id=1728342035]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=280177161]
+[node name="labelsvbox" type="VBoxContainer" parent="MarginContainer/labelsandslidershbox" unique_id=280177161]
 layout_mode = 2
 
-[node name="mastervolume" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1305600297]
+[node name="mastervolume" type="Label" parent="MarginContainer/labelsandslidershbox/labelsvbox" unique_id=1305600297]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.56078434, 0.49411765, 0.4862745)
@@ -43,7 +52,7 @@ theme_override_font_sizes/font_size = 40
 text = "Master Volume
 "
 
-[node name="musicvolume" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1514949925]
+[node name="musicvolume" type="Label" parent="MarginContainer/labelsandslidershbox/labelsvbox" unique_id=1514949925]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.56078434, 0.49411765, 0.4862745)
@@ -57,7 +66,7 @@ theme_override_font_sizes/font_size = 40
 text = "Music  Volume
 "
 
-[node name="sfxvolume" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1033056240]
+[node name="sfxvolume" type="Label" parent="MarginContainer/labelsandslidershbox/labelsvbox" unique_id=1033056240]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.56078434, 0.49411765, 0.4862745)
@@ -71,7 +80,7 @@ theme_override_font_sizes/font_size = 40
 text = "SFX Volume
 "
 
-[node name="speechvolume" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=668352590]
+[node name="speechvolume" type="Label" parent="MarginContainer/labelsandslidershbox/labelsvbox" unique_id=668352590]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.56078434, 0.49411765, 0.4862745)
@@ -85,7 +94,7 @@ theme_override_font_sizes/font_size = 40
 text = "Speech Volume
 "
 
-[node name="subtitles" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1482517862]
+[node name="subtitles" type="Label" parent="MarginContainer/labelsandslidershbox/labelsvbox" unique_id=1482517862]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.18431373, 0.42352942, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.56078434, 0.49411765, 0.4862745)
@@ -102,7 +111,7 @@ text = "Subtitles
 
 "
 
-[node name="return" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1138735060]
+[node name="return" type="Button" parent="MarginContainer/labelsandslidershbox/labelsvbox" unique_id=1138735060]
 layout_mode = 2
 size_flags_vertical = 4
 focus_mode = 0
@@ -117,40 +126,56 @@ text = "Return"
 flat = true
 autowrap_trim_flags = 192
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=482979948]
+[node name="spacervbox" type="VBoxContainer" parent="MarginContainer/labelsandslidershbox" unique_id=482979948]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.16
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1627143135]
+[node name="slidersvbox" type="VBoxContainer" parent="MarginContainer/labelsandslidershbox" unique_id=1627143135]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 17
 
-[node name="mastervolslider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1266108162]
+[node name="mastervolslider" type="HSlider" parent="MarginContainer/labelsandslidershbox/slidersvbox" unique_id=1266108162]
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.5
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_hld1g")
+bus_name = "Master"
 
-[node name="musicvolslider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1041653659]
+[node name="musicvolslider" type="HSlider" parent="MarginContainer/labelsandslidershbox/slidersvbox" unique_id=1041653659]
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.5
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_hld1g")
+bus_name = "Master"
 
-[node name="sfxvolslider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer3" unique_id=427097953]
+[node name="sfxvolslider" type="HSlider" parent="MarginContainer/labelsandslidershbox/slidersvbox" unique_id=427097953]
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.5
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_hld1g")
+bus_name = "SFX"
 
-[node name="speechvolslider" type="HSlider" parent="MarginContainer/HBoxContainer/VBoxContainer3" unique_id=1768818883]
+[node name="speechvolslider" type="HSlider" parent="MarginContainer/labelsandslidershbox/slidersvbox" unique_id=1768818883]
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 0.5
+max_value = 1.0
+step = 0.001
+script = ExtResource("3_hld1g")
+bus_name = "Speech"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer3" unique_id=171700034]
+[node name="subbuttonshbox" type="HBoxContainer" parent="MarginContainer/labelsandslidershbox/slidersvbox" unique_id=171700034]
 layout_mode = 2
 
-[node name="subtitlesoff" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer" unique_id=1362430764]
+[node name="subtitlesoff" type="Button" parent="MarginContainer/labelsandslidershbox/slidersvbox/subbuttonshbox" unique_id=1362430764]
 process_mode = 3
 layout_mode = 2
 size_flags_vertical = 4
@@ -169,7 +194,7 @@ text = "OFF"
 flat = true
 autowrap_trim_flags = 192
 
-[node name="subtitleson" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer" unique_id=675935986]
+[node name="subtitleson" type="Button" parent="MarginContainer/labelsandslidershbox/slidersvbox/subbuttonshbox" unique_id=675935986]
 layout_mode = 2
 size_flags_vertical = 4
 focus_mode = 0
@@ -186,11 +211,11 @@ text = "ON"
 flat = true
 autowrap_trim_flags = 192
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer3" unique_id=833140903]
+[node name="spacerhbox" type="HBoxContainer" parent="MarginContainer/labelsandslidershbox/slidersvbox" unique_id=833140903]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.47
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/return" to="." method="_on_return_pressed"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer/subtitlesoff" to="." method="_on_subtitlesoff_button_down"]
-[connection signal="button_down" from="MarginContainer/HBoxContainer/VBoxContainer3/HBoxContainer/subtitleson" to="." method="_on_subtitleson_button_down"]
+[connection signal="pressed" from="MarginContainer/labelsandslidershbox/labelsvbox/return" to="." method="_on_return_pressed"]
+[connection signal="button_down" from="MarginContainer/labelsandslidershbox/slidersvbox/subbuttonshbox/subtitlesoff" to="." method="_on_subtitlesoff_button_down"]
+[connection signal="button_down" from="MarginContainer/labelsandslidershbox/slidersvbox/subbuttonshbox/subtitleson" to="." method="_on_subtitleson_button_down"]

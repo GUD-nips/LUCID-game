@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cvertdm4jisfi"]
 
 [node name="luci_cam" type="Camera2D" unique_id=895267526]
+process_mode = 1
 scale = Vector2(80, 80)
 zoom = Vector2(0.3, 0.3)

@@ -10,8 +10,30 @@ shader = ExtResource("1_wplq4")
 shader_parameter/offset = Vector2(-20, 10)
 shader_parameter/shadow_color = Color(0.74509805, 0, 0.42352942, 1)
 
-[node name="MainMenuContainer" type="MarginContainer" unique_id=2138047183]
+[node name="MainMenuContainer" type="Control" unique_id=1318051446]
 process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nxj0u")
+
+[node name="backgroundcolour" type="ColorRect" parent="." unique_id=1726775211]
+show_behind_parent = true
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 0.6117647, 0.99215686, 0.44705883)
+
+[node name="movingbackground" type="AnimatedSprite2D" parent="." unique_id=536878971]
+
+[node name="menumusic" type="AudioStreamPlayer" parent="." unique_id=1673778101]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=395021836]
+process_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -21,12 +43,11 @@ theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 50
-script = ExtResource("1_nxj0u")
 
-[node name="TitleSeperatorVBOX" type="VBoxContainer" parent="." unique_id=2099230162]
+[node name="TitleSeperatorVBOX" type="VBoxContainer" parent="MarginContainer" unique_id=2099230162]
 layout_mode = 2
 
-[node name="TitleGraphic" type="TextureRect" parent="TitleSeperatorVBOX" unique_id=69996101]
+[node name="TitleGraphic" type="TextureRect" parent="MarginContainer/TitleSeperatorVBOX" unique_id=69996101]
 material = SubResource("ShaderMaterial_r34v2")
 layout_mode = 2
 size_flags_horizontal = 4
@@ -34,16 +55,16 @@ size_flags_vertical = 8
 texture = ExtResource("2_nxj0u")
 stretch_mode = 2
 
-[node name="MenuButtonsHBOX" type="HBoxContainer" parent="TitleSeperatorVBOX" unique_id=800790104]
+[node name="MenuButtonsHBOX" type="HBoxContainer" parent="MarginContainer/TitleSeperatorVBOX" unique_id=800790104]
 layout_mode = 2
 size_flags_vertical = 3
 layout_direction = 3
 
-[node name="ExitVBOX" type="VBoxContainer" parent="TitleSeperatorVBOX/MenuButtonsHBOX" unique_id=2046271010]
+[node name="ExitVBOX" type="VBoxContainer" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX" unique_id=2046271010]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ExitButton" type="Button" parent="TitleSeperatorVBOX/MenuButtonsHBOX/ExitVBOX" unique_id=287506937]
+[node name="ExitButton" type="Button" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/ExitVBOX" unique_id=287506937]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -59,12 +80,12 @@ theme_override_font_sizes/font_size = 60
 text = "EXIT"
 flat = true
 
-[node name="ContinueVBOX2" type="VBoxContainer" parent="TitleSeperatorVBOX/MenuButtonsHBOX" unique_id=227293846]
+[node name="ContinueVBOX2" type="VBoxContainer" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX" unique_id=227293846]
 layout_mode = 2
 size_flags_horizontal = 3
 layout_direction = 1
 
-[node name="Continue" type="Button" parent="TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2" unique_id=858513087]
+[node name="Continue" type="Button" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2" unique_id=858513087]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -80,7 +101,7 @@ theme_override_font_sizes/font_size = 60
 text = "CONTINUE"
 flat = true
 
-[node name="LoadMenu" type="Button" parent="TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2" unique_id=1119201944]
+[node name="LoadMenu" type="Button" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2" unique_id=1119201944]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -96,12 +117,12 @@ theme_override_font_sizes/font_size = 60
 text = "Load Menu"
 flat = true
 
-[node name="NewGameVBOX1" type="VBoxContainer" parent="TitleSeperatorVBOX/MenuButtonsHBOX" unique_id=1860014441]
+[node name="NewGameVBOX1" type="VBoxContainer" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX" unique_id=1860014441]
 layout_mode = 2
 size_flags_horizontal = 3
 layout_direction = 1
 
-[node name="NewGameButton" type="Button" parent="TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1" unique_id=1607834899]
+[node name="NewGameButton" type="Button" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1" unique_id=1607834899]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -117,7 +138,7 @@ theme_override_font_sizes/font_size = 60
 text = "New Game"
 flat = true
 
-[node name="OptionsButton" type="Button" parent="TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1" unique_id=315511885]
+[node name="OptionsButton" type="Button" parent="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1" unique_id=315511885]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 10
@@ -133,12 +154,8 @@ theme_override_font_sizes/font_size = 60
 text = "Options"
 flat = true
 
-[node name="MainMenuBG" type="AnimatedSprite2D" parent="." unique_id=536878971]
-
-[node name="MainMenuMusic" type="AudioStreamPlayer" parent="." unique_id=1673778101]
-
-[connection signal="pressed" from="TitleSeperatorVBOX/MenuButtonsHBOX/ExitVBOX/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2/LoadMenu" to="." method="_on_load_menu_pressed"]
-[connection signal="pressed" from="TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/ExitVBOX/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/ContinueVBOX2/LoadMenu" to="." method="_on_load_menu_pressed"]
+[connection signal="pressed" from="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MarginContainer/TitleSeperatorVBOX/MenuButtonsHBOX/NewGameVBOX1/OptionsButton" to="." method="_on_options_button_pressed"]
